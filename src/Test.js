@@ -10,7 +10,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF('/test.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[0, 0.52, 0]} scale={0}>
+      <group position={[0,0, 0]} scale={0.0015}>
         <group position={[55.24, 190.49, -160.66]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={[1.27, 1.57, 1.29]}>
           <mesh geometry={nodes.网格009.geometry} material={materials['04 - Default']} />
           <mesh geometry={nodes.网格009_1.geometry} material={materials['02 - Default.001']} />

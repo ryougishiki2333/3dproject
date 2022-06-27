@@ -2,7 +2,7 @@ import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
-import Model from "./CarTest";
+import Model from "./Test";
 
 function App() {
   
