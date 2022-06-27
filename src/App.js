@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { Model } from "./Test";
 
 function App() {
+  
   return (
     <div className="middleBox m-6 ">
       <div className="leftBox ">
@@ -20,11 +21,9 @@ function App() {
             <ambientLight intensity={1.25} />
             <ambientLight intensity={0.1} />
             <directionalLight intensity={0.4} />
-            <mesh
-            >
-              <boxGeometry args={[1, 1, 1]} />
-              <meshStandardMaterial color={"hotpink"} />
-            </mesh>
+            <Suspense fallback={null}>
+              <Model position={[0.025, -0.9, 0]} />
+            </Suspense>
             <OrbitControls />
           </Canvas>
         </div>
