@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="middleBox m-6 ">
       <div className="leftBox ">
-        <div className="w-full h-4/5 border-solid border-2 border-blue-500 rounded-xl cursor-pointer">
+        <div className="w-full h-4/5 border-solid border-2 border-blue-500 cursor-pointer">
           <Canvas
             camera={{ position: [2, 0, 12.25], fov: 15 }}
             style={{
