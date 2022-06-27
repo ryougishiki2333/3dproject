@@ -1,20 +1,30 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Suspense } from "react";
+import { Model } from "./Test";
 
 function App() {
   return (
     <div className="middleBox m-6 ">
       <div className="leftBox ">
         <div className="w-full h-4/5 border-solid border-2 border-blue-500 rounded-xl cursor-pointer">
-          <Canvas>
-            <mesh rotation={[100, 100, 300]}>
-              <boxGeometry args={[1, 2, 1]} />
-              <meshStandardMaterial attach="material" color="green" />
+          <Canvas
+            camera={{ position: [2, 0, 12.25], fov: 15 }}
+            style={{
+              backgroundColor: "#111a21",
+              width: "436px",
+              height: "516px",
+            }}
+          >
+            <ambientLight intensity={1.25} />
+            <ambientLight intensity={0.1} />
+            <directionalLight intensity={0.4} />
+            <mesh
+            >
+              <boxGeometry args={[1, 1, 1]} />
+              <meshStandardMaterial color={"hotpink"} />
             </mesh>
-            <directionalLight intensity={0.5} />
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 15, 10]} angle={0.9} />
             <OrbitControls />
           </Canvas>
         </div>
@@ -22,7 +32,7 @@ function App() {
           <div className="text-gray-300 text-sm font-bold">CURRENT PRICE</div>
           <div className="text-yellow-300 flex">
             <div className="mr-1">
-              <i class="fi fi-dollar"></i>
+              <i className="fi fi-dollar"></i>
             </div>
             <span>52.50</span>
           </div>
@@ -51,19 +61,19 @@ function App() {
         <div className="flex my-1">
           <div className="flex mr-6">
             <div className="text-green-500 mr-1">
-              <i class="fi fi-favorite"></i>
+              <i className="fi fi-favorite"></i>
             </div>
             <div className="text-gray-500">5420 minted</div>
           </div>
           <div className="flex mr-6">
             <div className="text-green-500 mr-1">
-              <i class="fi fi-dollar"></i>
+              <i className="fi fi-dollar"></i>
             </div>
             <div className="text-gray-500">294 of 420 for sale</div>
           </div>
           <div className="flex mr-6">
             <div className="text-green-500 mr-1">
-              <i class="fi fi-female"></i>
+              <i className="fi fi-female"></i>
             </div>
             <div className="text-gray-500">578 owners</div>
           </div>
@@ -74,7 +84,7 @@ function App() {
             <div className="text-sm font-bold text-gray-500">Type</div>
             <div className="flex mt-2">
               <div className="mr-1 text-blue-500">
-                <i class="fi fi-steam"></i>
+                <i className="fi fi-steam"></i>
               </div>
               <div className="text-gray-400">Equipment</div>
             </div>
@@ -93,7 +103,7 @@ function App() {
           <div className="py-6 px-8 flex">
             <div className="flex place-items-center">
               <div className="text-4xl text-blue-500">
-                <i class="fi fi-radio-btn-active"></i>
+                <i className="fi fi-radio-btn-active"></i>
               </div>
             </div>
             <div className="flex place-items-center">
@@ -108,7 +118,7 @@ function App() {
               <div className="text-sm font-bold text-red-400">DEFENSE</div>
               <div className="flex">
                 <div className="text-xl text-red-400 mr-1">
-                  <i class="fi fi-radio-btn-active"></i>
+                  <i className="fi fi-radio-btn-active"></i>
                 </div>
                 <div className="text-lg text-gray-100 font-bold">38</div>
               </div>
